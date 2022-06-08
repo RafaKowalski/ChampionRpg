@@ -7,25 +7,37 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Champion championOne, championTwo;
 
-        Console.WriteLine("Digite o nome do primeiro campeao: ");
-        string nameOne = Console.ReadLine();
+        Champion championOne = new Champion("Rafael", 50, 10, 2);
 
-        Console.WriteLine("Digite a quantidade de pontos vitais do primeiro campeao: ");
-        int hpOne = int.Parse(Console.ReadLine());
+        Champion championTwo = new Champion("GustavinhoGamePlays", 40, 5, 2);
 
-        championOne = new Champion(nameOne, hpOne);
-
-        Console.WriteLine("Digite o nome do segundo campeao: ");
-        string nameTwo = Console.ReadLine();
-
-        Console.WriteLine("Digite a quantidade de pontos vitais do segundo campeao: ");
-        int hpTwo = int.Parse(Console.ReadLine());
-
-        championTwo = new Champion(nameTwo, hpTwo);
-
+        Console.Clear();
         Console.WriteLine(championOne);
+        Console.WriteLine();
         Console.WriteLine(championTwo);
+
+        Console.WriteLine("Atacando adversário: ");
+
+        championOne.LosingHp(championTwo, championOne.Attack);
+
+        int count = 0;
+        while (true)
+        {
+            if (championOne.Hp <= 0 || championTwo.Hp <= 0)
+                break;
+
+            Console.WriteLine($"Turno {count}");
+            championOne.LosingHp(championTwo, championOne.Attack);
+            championTwo.LosingHp(championOne, championTwo.Attack);
+
+            Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
+            count++;
+        }
+
+        if (championOne.Hp == 0)
+            Console.WriteLine("Vencendor Campeao dois! " + championTwo);
+        else
+            Console.WriteLine("Vencendor Camepao um! " + championOne);
     }
 }
