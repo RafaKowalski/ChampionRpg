@@ -16,9 +16,7 @@ public class Program
         Console.WriteLine(championOne);
         Console.WriteLine();
         Console.WriteLine(championTwo);
-
-        Console.WriteLine("Atacando adversário: ");
-
+        Console.WriteLine();
         championOne.LosingHp(championTwo, championOne.Attack);
 
         int count = 0;
@@ -36,8 +34,8 @@ public class Program
         }
 
         if (championOne.Hp == 0)
-            Console.WriteLine("Vencendor Campeao dois! " + championTwo);
+            Console.WriteLine("Vencendor Campeao dois! " + championTwo.Name);
         else
-            Console.WriteLine("Vencendor Camepao um! " + championOne);
+            Console.WriteLine("Vencendor Camepao um! " + championOne.Name);
     }
 }

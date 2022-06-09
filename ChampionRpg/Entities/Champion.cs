@@ -30,7 +30,7 @@ namespace ChampionRpg.Entities
         }
         public override string ToString()
         {
-            return "Name: " + Name + "\nHp: " + Hp;
+            return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack + "\nDefense: " + Defense;
         }
     }
 }
