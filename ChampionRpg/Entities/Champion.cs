@@ -28,6 +28,11 @@ namespace ChampionRpg.Entities
         {
             victim.Hp += victim.Defense - attack;
         }
+
+        public int GainDefense(Champion gainDefense)
+        {
+            return gainDefense.Defense + 2;
+        }
         public override string ToString()
         {
             return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack + "\nDefense: " + Defense;

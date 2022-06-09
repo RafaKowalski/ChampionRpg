@@ -17,7 +17,6 @@ public class Program
         Console.WriteLine();
         Console.WriteLine(championTwo);
         Console.WriteLine();
-        championOne.LosingHp(championTwo, championOne.Attack);
 
         int count = 0;
         while (true)
