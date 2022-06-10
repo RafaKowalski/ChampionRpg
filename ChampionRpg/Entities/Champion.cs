@@ -29,10 +29,24 @@ namespace ChampionRpg.Entities
             victim.Hp += victim.Defense - attack;
         }
 
-        public int GainDefense(Champion gainDefense)
+        public string Choice(string choice)
         {
-            return gainDefense.Defense + 2;
+            Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Defense");
+            choice = Console.ReadLine();
+
+            if (choice == "ataque")
+                Console.WriteLine($"Você atacou o inimigo com o ataque de {Attack}");
+
+            if (choice == "defense")
+            {
+                Console.WriteLine($"Você aumentou sua defesa em +1");
+                Defense++;
+                Console.WriteLine("Sua atual defesa é de: " + Defense);
+            }
+
+            return choice;
         }
+
         public override string ToString()
         {
             return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack + "\nDefense: " + Defense;

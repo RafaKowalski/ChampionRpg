@@ -25,6 +25,7 @@ public class Program
                 break;
 
             Console.WriteLine($"Turno {count}");
+            championOne.Choice(championOne.Name);
             championOne.LosingHp(championTwo, championOne.Attack);
             championTwo.LosingHp(championOne, championTwo.Attack);
 
