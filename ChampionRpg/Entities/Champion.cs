@@ -29,22 +29,30 @@ namespace ChampionRpg.Entities
             victim.Hp += victim.Defense - attack;
         }
 
-        public string Choice(string choice)
+        public string Choice(string choice, Champion victim, int attack)
         {
             Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Defense");
             choice = Console.ReadLine();
 
             if (choice == "ataque")
+            {
                 Console.WriteLine($"Você atacou o inimigo com o ataque de {Attack}");
+                victim.LosingHp(victim, attack);
+            }
 
             if (choice == "defense")
             {
-                Console.WriteLine($"Você aumentou sua defesa em +1");
+                Console.WriteLine($"Você aumentou sua defesa em +1 neste turno");
                 Defense++;
                 Console.WriteLine("Sua atual defesa é de: " + Defense);
             }
 
             return choice;
+        }
+
+        public void LessDefense(Champion lessDefense)
+        {
+            lessDefense.Defense--;
         }
 
         public override string ToString()
