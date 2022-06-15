@@ -50,11 +50,6 @@ namespace ChampionRpg.Entities
             return choice;
         }
 
-        public void LessDefense(Champion lessDefense)
-        {
-            lessDefense.Defense--;
-        }
-
         public override string ToString()
         {
             return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack + "\nDefense: " + Defense;

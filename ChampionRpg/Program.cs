@@ -26,10 +26,10 @@ public class Program
 
             Console.WriteLine($"Turno {count}");
             championOne.Choice(championOne.Name, championTwo, championOne.Attack);
-            championTwo.Choice(championTwo.Name,championOne, championTwo.Attack);
+            championTwo.Choice(championTwo.Name, championOne, championTwo.Attack);
 
             Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
-            
+
             count++;
         }
 
