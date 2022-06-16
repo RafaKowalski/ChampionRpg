@@ -19,5 +19,10 @@ namespace ChampionRpg.Entities
             Name = name;
             Quantity = quantity;
         }
+
+        public void HealthPotion(Champion champion)
+        {
+            champion.Hp = champion.Hp + 6;
+        }
     }
 }

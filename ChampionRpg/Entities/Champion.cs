@@ -11,7 +11,6 @@ namespace ChampionRpg.Entities
         public string Name { get; set; }
         public int Hp { get; set; }
         public int Attack { get; set; }
-        public int Defense { get; set; }
 
         public Champion()
         {
@@ -21,30 +20,30 @@ namespace ChampionRpg.Entities
             Name = name;
             Hp = hp;
             Attack = attack;
-            Defense = defense;
         }
 
-        public void LosingHp(Champion victim, int attack)
+        public void LosingHp(Champion champion, int attack)
         {
-            victim.Hp += victim.Defense - attack;
+            champion.Hp -= attack;
         }
 
-        public string Choice(string choice, Champion victim, int attack)
+        public string Choice(string choice, Champion champion, int attack, Item item, Champion champion1)
         {
-            Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Defense");
+            Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Item");
             choice = Console.ReadLine();
 
             if (choice == "ataque")
             {
+                Console.WriteLine();
                 Console.WriteLine($"Você atacou o inimigo com o ataque de {Attack}");
-                victim.LosingHp(victim, attack);
+                champion.LosingHp(champion, attack);
             }
 
-            if (choice == "defense")
+            if (choice == "item")
             {
-                Console.WriteLine($"Você aumentou sua defesa em +1 neste turno");
-                Defense++;
-                Console.WriteLine("Sua atual defesa é de: " + Defense);
+                Console.WriteLine();
+                Console.WriteLine("Você utilizou uma poção de cura");
+                item.HealthPotion(champion1);
             }
 
             return choice;
@@ -52,7 +51,7 @@ namespace ChampionRpg.Entities
 
         public override string ToString()
         {
-            return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack + "\nDefense: " + Defense;
+            return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack;
         }
     }
 }

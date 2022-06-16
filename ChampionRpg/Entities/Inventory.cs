@@ -24,7 +24,7 @@ namespace ChampionRpg.Entities
 
         public List<Item> PerdendoItem(Item item)
         {
-            List <Item> list = new List<Item>();
+            List<Item> list = new List<Item>();
             list.Remove(item);
             return list;
         }
