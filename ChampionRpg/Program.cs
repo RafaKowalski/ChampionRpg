@@ -31,6 +31,7 @@ public class Program
             championOne.Choice(championOne.Name, championTwo, championOne.Attack, itemOne, championOne);
 
             Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
+            Console.WriteLine("Ataque pós turno: " + championOne.Attack + " " + championTwo.Attack);
 
             if (championTwo.Hp <= 0)
             {
@@ -46,6 +47,7 @@ public class Program
             championTwo.Choice(championTwo.Name, championOne, championTwo.Attack, itemTwo, championTwo);
 
             Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
+            Console.WriteLine("Ataque pós turno: " + championOne.Attack + " " + championTwo.Attack);
 
             if (championOne.Hp <= 0)
             {

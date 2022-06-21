@@ -42,8 +42,7 @@ namespace ChampionRpg.Entities
             if (choice == "item")
             {
                 Console.WriteLine();
-                Console.WriteLine("Você utilizou uma poção de cura");
-                item.HealthPotion(champion1);
+                item.ChoosingItem(item, champion1);
             }
 
             return choice;

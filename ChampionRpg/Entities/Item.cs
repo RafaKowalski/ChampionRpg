@@ -24,5 +24,21 @@ namespace ChampionRpg.Entities
         {
             champion.Hp = champion.Hp + 6;
         }
+
+        public void AttackPotion(Champion champion)
+        {
+            champion.Attack = champion.Attack + 2;
+        }
+
+        public void ChoosingItem(Item item, Champion champion)
+        {
+            Console.WriteLine("Selecione o item Health potion (hp) ou Attack potion (ap): ");
+            item.Name = Console.ReadLine();
+            if (item.Name == "hp")
+                item.HealthPotion(champion);
+
+            if (item.Name == "ap")
+                item.AttackPotion(champion);
+        }
     }
 }
