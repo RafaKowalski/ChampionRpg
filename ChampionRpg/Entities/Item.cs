@@ -40,5 +40,10 @@ namespace ChampionRpg.Entities
             if (item.Name == "ap")
                 item.AttackPotion(champion);
         }
+
+        public override string ToString()
+        {
+            return Name + " " + Quantity;
+        }
     }
 }

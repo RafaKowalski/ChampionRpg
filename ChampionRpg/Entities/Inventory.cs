@@ -28,5 +28,13 @@ namespace ChampionRpg.Entities
             list.Remove(item);
             return list;
         }
+
+        public List<Item> MostrandoInventário(Item item)
+        {
+           List <Item> list = new List<Item>();
+            foreach (Item item2 in Items)
+                Console.WriteLine(item2);
+            return list;
+        }
     }
 }
