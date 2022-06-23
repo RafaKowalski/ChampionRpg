@@ -22,12 +22,12 @@ namespace ChampionRpg.Entities
             Attack = attack;
         }
 
-        public void LosingHp(Champion champion, int attack)
+        private void LosingHp(Champion champion, int attack)
         {
             champion.Hp -= attack;
         }
 
-        public string Choice(string choice, Champion champion, int attack, Item item, Champion champion1)
+        public string Choice(string choice, Champion champion, int attack, Item item, Champion championChoose)
         {
             Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Item");
             choice = Console.ReadLine();
@@ -42,7 +42,7 @@ namespace ChampionRpg.Entities
             if (choice == "item")
             {
                 Console.WriteLine();
-                item.ChoosingItem(item, champion1);
+                item.ChoosingItem(item, championChoose);
             }
 
             return choice;

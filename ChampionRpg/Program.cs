@@ -56,10 +56,5 @@ public class Program
             }
             count++;
         }
-
-        /*if (championOne.Hp == 0)
-            Console.WriteLine("Vencendor Campeao dois! " + championTwo.Name);
-        else
-            Console.WriteLine("Vencendor Campeao Um! " + championOne.Name);*/
     }
 }
