@@ -10,26 +10,15 @@ public class Program
     {
 
         Champion championOne = new Champion("Rafael", 50, 10, 2);
-        Item itemOne = new Item("HealthPotion", 2);
+        Item itemOne = new Item();
         Champion championTwo = new Champion("GustavinhoGamePlays", 40, 5, 2);
         Item itemTwo = new Item();
-        Inventory inventoryOne = new Inventory();
-
-        List<Item> list = new List<Item>();
-
-        list.Add(new Item("HealthPotin", 2));
-        list.Add(new Item("AttackPotion", 3));
-
-        foreach (Item item in list)
-            Console.WriteLine(item);
 
         Console.Clear();
         Console.WriteLine(championOne);
         Console.WriteLine();
         Console.WriteLine(championTwo);
         Console.WriteLine();
-
-
 
         int count = 1;
         while (true)
@@ -68,10 +57,5 @@ public class Program
             }
             count++;
         }
-
-        /*if (championOne.Hp == 0)
-            Console.WriteLine("Vencendor Campeao dois! " + championTwo.Name);
-        else
-            Console.WriteLine("Vencendor Campeao Um! " + championOne.Name);*/
     }
 }
