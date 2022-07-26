@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ChampionRpg.Entities;
+using ChampionRpg.Entities.Exceptions;
 
 namespace ChampionProgram;
 
@@ -20,42 +21,50 @@ public class Program
         Console.WriteLine(championTwo);
         Console.WriteLine();
 
-        int count = 1;
-        while (true)
+
+        try
         {
-            if (championOne.Hp <= 1 || championTwo.Hp <= 1)
-                break;
-
-            Console.WriteLine();
-            Console.WriteLine($"Turno {count}");
-            Console.WriteLine($"{championOne.Name} joga \n");
-            championOne.Choice(championOne.Name, championTwo, championOne.Attack, itemOne, championOne);
-
-            Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
-            Console.WriteLine("Ataque pós turno: " + championOne.Attack + " " + championTwo.Attack);
-
-            if (championTwo.Hp <= 0)
+            int count = 1;
+            while (true)
             {
-                Console.WriteLine("Vencendor Campeao Um! " + championOne.Name);
-                break;
+                if (championOne.Hp <= 1 || championTwo.Hp <= 1)
+                    break;
+
+                Console.WriteLine();
+                Console.WriteLine($"Turno {count}");
+                Console.WriteLine($"{championOne.Name} joga \n");
+                championOne.Choice(championOne.Name, championTwo, championOne.Attack, itemOne, championOne);
+
+                Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
+                Console.WriteLine("Ataque pós turno: " + championOne.Attack + " " + championTwo.Attack);
+
+                if (championTwo.Hp <= 0)
+                {
+                    Console.WriteLine("Vencendor Campeao Um! " + championOne.Name);
+                    break;
+                }
+
+                count++;
+
+                Console.WriteLine();
+                Console.WriteLine($"Turno {count}");
+                Console.WriteLine($"{championTwo.Name} joga \n");
+                championTwo.Choice(championTwo.Name, championOne, championTwo.Attack, itemTwo, championTwo);
+
+                Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
+                Console.WriteLine("Ataque pós turno: " + championOne.Attack + " " + championTwo.Attack);
+
+                if (championOne.Hp <= 0)
+                {
+                    Console.WriteLine("Vencendor Campeao Dois! " + championTwo.Name);
+                    break;
+                }
+                count++;
             }
-
-            count++;
-
-            Console.WriteLine();
-            Console.WriteLine($"Turno {count}");
-            Console.WriteLine($"{championTwo.Name} joga \n");
-            championTwo.Choice(championTwo.Name, championOne, championTwo.Attack, itemTwo, championTwo);
-
-            Console.WriteLine("Hp pós turno: " + championOne.Hp + " " + championTwo.Hp);
-            Console.WriteLine("Ataque pós turno: " + championOne.Attack + " " + championTwo.Attack);
-
-            if (championOne.Hp <= 0)
-            {
-                Console.WriteLine("Vencendor Campeao Dois! " + championTwo.Name);
-                break;
-            }
-            count++;
+        }
+        catch (DomainException message)
+        {
+            Console.WriteLine("Error: " + message.Message);
         }
     }
 }

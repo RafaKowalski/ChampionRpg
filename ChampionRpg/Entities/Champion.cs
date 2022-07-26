@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ChampionRpg.Entities.Exceptions;
 
 namespace ChampionRpg.Entities
 {
@@ -39,7 +35,7 @@ namespace ChampionRpg.Entities
                 champion.LosingHp(champion, attack);
             }
 
-            if (choice == "item")
+            else if (choice == "item")
             {
                 Console.WriteLine();
                 Console.WriteLine("Inventário");
@@ -47,6 +43,9 @@ namespace ChampionRpg.Entities
                 Console.WriteLine();
                 item.ChoosingItem(item, championChoose);
             }
+
+            else
+                throw new DomainException("Opção digitada incorretamente");
 
             return choice;
         }
