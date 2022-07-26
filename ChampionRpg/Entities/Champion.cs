@@ -42,6 +42,9 @@ namespace ChampionRpg.Entities
             if (choice == "item")
             {
                 Console.WriteLine();
+                Console.WriteLine("Inventário");
+                item.MostrandoItens();
+                Console.WriteLine();
                 item.ChoosingItem(item, championChoose);
             }
 

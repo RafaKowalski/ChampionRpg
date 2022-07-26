@@ -42,12 +42,18 @@ namespace ChampionRpg.Entities
             if (item.Name == "hp")
                 item.HealthPotion(champion);
 
-
-
             if (item.Name == "ap")
                 item.AttackPotion(champion);
+        }
 
+        public void MostrandoItens()
+        {
+            List <Item> list = new List<Item>();
+            list.Add(new Item("Health Potion", 2));
+            list.Add(new Item("Attack Potion", 1));
 
+            foreach (Item item1 in list)
+                Console.WriteLine(item1);
         }
 
         public override string ToString()
