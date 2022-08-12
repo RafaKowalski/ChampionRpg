@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChampionRpg.Entities
 {
-    public class Orc
+    public class Orc : Human
     {
         public void EscolhendoClasseOrc(Champion champion)
         {
