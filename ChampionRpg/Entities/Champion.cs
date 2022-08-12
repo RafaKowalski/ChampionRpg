@@ -12,6 +12,11 @@ namespace ChampionRpg.Entities
         {
         }
 
+        public Champion(string name)
+        {
+            Name = name;
+        }
+
         public Champion(string name, int hp, int attack)
         {
             Name = name;
