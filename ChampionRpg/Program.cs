@@ -18,17 +18,31 @@ public class Program
         string classeOne = Console.ReadLine();
 
         if (classeOne == "human")
-            championOne.EscolhendoClasseHuman(championOne);
+        {
+            Human human = new Human();
+            human.EscolhendoClasseHuman(championOne);
+        }
+            
         else
-            championOne.EscolhendoClasseOrc(championOne);
+        {
+            Orc orc = new Orc();
+            orc.EscolhendoClasseOrc(championOne);
+        }
 
         Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc");
         string classeTwo = Console.ReadLine();
 
         if (classeTwo == "human")
-            championTwo.EscolhendoClasseHuman(championTwo);
+        {
+            Human human = new Human();
+            human.EscolhendoClasseHuman(championTwo);
+        }
+
         else
-            championTwo.EscolhendoClasseOrc(championTwo);
+        {
+            Orc orc = new Orc();
+            orc.EscolhendoClasseOrc(championTwo);
+        }
 
         Console.Clear();
         Console.WriteLine(championOne);

@@ -29,17 +29,6 @@ namespace ChampionRpg.Entities
             champion.Hp -= attack;
         }
 
-        public void EscolhendoClasseHuman(Champion champion)
-        {
-            champion.Hp = 60;
-            champion.Attack = 8;
-        }
-        public void EscolhendoClasseOrc(Champion champion)
-        {
-            champion.Hp = 85;
-            champion.Attack = 3;
-        }
-
         public string Choice(string choice, Champion champion, int attack, Item item, Champion championChoose)
         {
             Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Item");
