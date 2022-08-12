@@ -9,18 +9,32 @@ public class Program
 {
     public static void Main(string[] args)
     {
-
-        Champion championOne = new Champion("Rafael", 50, 10, 2);
+        Champion championOne = new Champion("Rafael");
         Item itemOne = new Item();
-        Champion championTwo = new Champion("GustavinhoGamePlays", 40, 5, 2);
+        Champion championTwo = new Champion("GustavinhoGamePlays");
         Item itemTwo = new Item();
+
+        Console.WriteLine($"{championOne.Name} escolha uma classe: human/orc");
+        string classeOne = Console.ReadLine();
+
+        if (classeOne == "human")
+            championOne.EscolhendoClasseHuman(championOne);
+        else
+            championOne.EscolhendoClasseOrc(championOne);
+
+        Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc");
+        string classeTwo = Console.ReadLine();
+
+        if (classeTwo == "human")
+            championTwo.EscolhendoClasseHuman(championTwo);
+        else
+            championTwo.EscolhendoClasseOrc(championTwo);
 
         Console.Clear();
         Console.WriteLine(championOne);
         Console.WriteLine();
         Console.WriteLine(championTwo);
         Console.WriteLine();
-
 
         try
         {

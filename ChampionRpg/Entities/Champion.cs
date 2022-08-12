@@ -11,7 +11,13 @@ namespace ChampionRpg.Entities
         public Champion()
         {
         }
-        public Champion(string name, int hp, int attack, int defense)
+
+        public Champion(string name)
+        {
+            Name = name;
+        }
+
+        public Champion(string name, int hp, int attack)
         {
             Name = name;
             Hp = hp;
@@ -21,6 +27,17 @@ namespace ChampionRpg.Entities
         private void LosingHp(Champion champion, int attack)
         {
             champion.Hp -= attack;
+        }
+
+        public void EscolhendoClasseHuman(Champion champion)
+        {
+            champion.Hp = 60;
+            champion.Attack = 8;
+        }
+        public void EscolhendoClasseOrc(Champion champion)
+        {
+            champion.Hp = 85;
+            champion.Attack = 3;
         }
 
         public string Choice(string choice, Champion champion, int attack, Item item, Champion championChoose)

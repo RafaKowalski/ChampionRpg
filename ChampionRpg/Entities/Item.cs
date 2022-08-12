@@ -32,10 +32,6 @@ namespace ChampionRpg.Entities
 
         public void ChoosingItem(Item item, Champion champion)
         {
-            List<Item> list = new List<Item>();
-            list.Add(new Item("Health Potion", 2));
-            list.Add(new Item("Attack Potion", 1));
-
             Console.WriteLine("Selecione o item Health potion (hp) ou Attack potion (ap): ");
             item.Name = Console.ReadLine();
 
@@ -45,15 +41,14 @@ namespace ChampionRpg.Entities
             if (item.Name == "ap")
                 item.AttackPotion(champion);
         }
-
         public void MostrandoItens()
         {
-            List <Item> list = new List<Item>();
-            list.Add(new Item("Health Potion", 2));
-            list.Add(new Item("Attack Potion", 1));
+            List<Item> list = new List<Item>();
+            list.Add(new Item("Health Potion", 999));
+            list.Add(new Item("Attack Potion", 999));
 
-            foreach (Item item1 in list)
-                Console.WriteLine(item1);
+            foreach (Item item in list)
+                Console.WriteLine(item);
         }
 
         public override string ToString()
