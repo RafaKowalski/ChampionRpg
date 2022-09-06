@@ -11,7 +11,7 @@ namespace ChampionRpg.Entities
         public void EscolhendoClasseOrc(Champion champion)
         {
             champion.Hp = 85;
-            champion.Attack = 3;
+            champion.Attack = 5;
         }
     }
 }

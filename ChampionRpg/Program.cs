@@ -14,34 +14,54 @@ public class Program
         Champion championTwo = new Champion("GustavinhoGamePlays");
         Item itemTwo = new Item();
 
-        Console.WriteLine($"{championOne.Name} escolha uma classe: human/orc");
-        string classeOne = Console.ReadLine();
-
-        if (classeOne == "human")
+        try
         {
-            Human human = new Human();
-            human.EscolhendoClasseHuman(championOne);
+            Console.WriteLine($"{championOne.Name} escolha uma classe: human/orc");
+            string classeOne = Console.ReadLine();
+
+            if (classeOne == "human")
+            {
+                Human human = new Human();
+                human.EscolhendoClasseHuman(championOne);
+            }
+
+            else if (classeOne == "orc")
+            {
+                Orc orc = new Orc();
+                orc.EscolhendoClasseOrc(championOne);
+            }
+
+            else
+                throw new DomainException("Opção digitada incorretamente");
         }
-            
-        else
+        catch (DomainException message)
         {
-            Orc orc = new Orc();
-            orc.EscolhendoClasseOrc(championOne);
+            Console.WriteLine("Error: " + message.Message);
         }
 
-        Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc");
-        string classeTwo = Console.ReadLine();
-
-        if (classeTwo == "human")
+        try
         {
-            Human human = new Human();
-            human.EscolhendoClasseHuman(championTwo);
+            Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc");
+            string classeTwo = Console.ReadLine();
+
+            if (classeTwo == "human")
+            {
+                Human human = new Human();
+                human.EscolhendoClasseHuman(championTwo);
+            }
+
+            else if (classeTwo == "orc")
+            {
+                Orc orc = new Orc();
+                orc.EscolhendoClasseOrc(championTwo);
+            }
+
+            else
+                throw new DomainException("Opção digitada incorretamente");
         }
-
-        else
+        catch (DomainException message)
         {
-            Orc orc = new Orc();
-            orc.EscolhendoClasseOrc(championTwo);
+            Console.WriteLine("Error: " + message.Message);
         }
 
         Console.Clear();

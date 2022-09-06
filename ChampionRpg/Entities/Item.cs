@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChampionRpg.Entities.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,8 +39,11 @@ namespace ChampionRpg.Entities
             if (item.Name == "hp")
                 item.HealthPotion(champion);
 
-            if (item.Name == "ap")
+            else if (item.Name == "ap")
                 item.AttackPotion(champion);
+
+            else
+                throw new DomainException("Opção digitada incorretamente");
         }
         public override string ToString()
         {
