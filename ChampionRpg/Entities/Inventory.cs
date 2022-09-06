@@ -9,8 +9,7 @@
             list.Add(new Item("Health Potion", 999));
             list.Add(new Item("Attack Potion", 999));
 
-            foreach (Item item in list)
-                Console.WriteLine(item);
+            list.ForEach(Console.WriteLine);
         }
 
         public void AddItem(Item item)
