@@ -31,6 +31,8 @@ namespace ChampionRpg.Entities
 
         public string Choice(string choice, Champion champion, int attack, Item item, Champion championChoose)
         {
+            Inventory inventory = new Inventory();
+
             Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Item");
             choice = Console.ReadLine();
 
@@ -45,7 +47,7 @@ namespace ChampionRpg.Entities
             {
                 Console.WriteLine();
                 Console.WriteLine("Inventário");
-                item.MostrandoItens();
+                inventory.MostrandoItens();
                 Console.WriteLine();
                 item.ChoosingItem(item, championChoose);
             }
