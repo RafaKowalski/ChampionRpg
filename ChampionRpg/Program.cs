@@ -16,7 +16,7 @@ public class Program
 
         try
         {
-            Console.WriteLine($"{championOne.Name} escolha uma classe: human/orc");
+            Console.WriteLine($"{championOne.Name} escolha uma classe: human/orc/elf/dwarf");
             string classeOne = Console.ReadLine();
 
             if (classeOne == "human")
@@ -31,6 +31,18 @@ public class Program
                 orc.EscolhendoClasseOrc(championOne);
             }
 
+            else if (classeOne == "elf")
+            {
+                Elf elf = new Elf();
+                elf.EscolhendoClasseElf(championOne);
+            }
+
+            else if (classeOne == "dwarf")
+            {
+                Dwarf dwarf = new Dwarf();
+                dwarf.EscolhendoClasseDwarf(championOne);
+            }
+
             else
                 throw new DomainException("Opção digitada incorretamente");
         }
@@ -41,7 +53,7 @@ public class Program
 
         try
         {
-            Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc");
+            Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc/elf/dwarf");
             string classeTwo = Console.ReadLine();
 
             if (classeTwo == "human")
@@ -54,6 +66,18 @@ public class Program
             {
                 Orc orc = new Orc();
                 orc.EscolhendoClasseOrc(championTwo);
+            }
+
+            else if (classeTwo == "elf")
+            {
+                Elf elf = new Elf();
+                elf.EscolhendoClasseElf(championTwo);
+            }
+
+            else if (classeTwo == "dwarf")
+            {
+                Dwarf dwarf = new Dwarf();
+                dwarf.EscolhendoClasseDwarf(championTwo);
             }
 
             else
