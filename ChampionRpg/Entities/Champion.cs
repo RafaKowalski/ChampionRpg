@@ -26,7 +26,12 @@ namespace ChampionRpg.Entities
 
         private void LosingHp(Champion champion, int attack)
         {
+            Random random = new Random();
+
+            attack = random.Next(1, 10);
+
             champion.Hp -= attack;
+            Console.WriteLine("Dano: " + attack.ToString());
         }
 
         public string Choice(string choice, Champion champion, int attack, Item item, Champion championChoose)
@@ -39,7 +44,7 @@ namespace ChampionRpg.Entities
             if (choice == "ataque")
             {
                 Console.WriteLine();
-                Console.WriteLine($"Você atacou o inimigo com o ataque de {Attack}");
+                //Console.WriteLine($"Você atacou o inimigo com o ataque de {Attack}");
                 champion.LosingHp(champion, attack);
             }
 
@@ -50,6 +55,7 @@ namespace ChampionRpg.Entities
                 inventory.MostrandoItens();
                 Console.WriteLine();
                 item.ChoosingItem(item, championChoose);
+                item.RemovendoItem(item);
             }
 
             else
@@ -60,7 +66,7 @@ namespace ChampionRpg.Entities
 
         public override string ToString()
         {
-            return "Name: " + Name + "\nHp: " + Hp + "\nAttack: " + Attack;
+            return "Name: " + Name + "\nHp: " + Hp; /*+ "\nAttack: " + Attack;*/
         }
     }
 }

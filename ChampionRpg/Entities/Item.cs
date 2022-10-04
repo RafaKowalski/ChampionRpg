@@ -45,6 +45,11 @@ namespace ChampionRpg.Entities
             else
                 throw new DomainException("Opção digitada incorretamente");
         }
+
+        public void RemovendoItem(Item item)
+        {
+            Quantity = item.Quantity - 1;
+        }
         public override string ToString()
         {
             return Name + " " + Quantity;
