@@ -2,14 +2,13 @@
 {
     public class Inventory
     {
-        public List<Item> Items { get; set; }
-        public void MostrandoItens()
+        public List<Item> Items { get; set; } = new List<Item> { };
+        public void MostrandoItens(Item item)
         {
-            List<Item> list = new List<Item>();
-            list.Add(new Item("Health Potion", 999));
-            list.Add(new Item("Attack Potion", 999));
+            Items.Add(new Item("Health Potion", 999));
+            Items.Add(new Item("Attack Potion", 999));
 
-            list.ForEach(Console.WriteLine);
+            Items.ForEach(Console.WriteLine);
         }
 
         public void AddItem(Item item)

@@ -52,10 +52,10 @@ namespace ChampionRpg.Entities
             {
                 Console.WriteLine();
                 Console.WriteLine("Inventário");
-                inventory.MostrandoItens();
+                inventory.MostrandoItens(item);
                 Console.WriteLine();
                 item.ChoosingItem(item, championChoose);
-                item.RemovendoItem(item);
+                inventory.RemoveItem(item);
             }
 
             else
