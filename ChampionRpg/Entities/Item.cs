@@ -48,7 +48,7 @@ namespace ChampionRpg.Entities
 
         public void RemovendoItem(Item item)
         {
-            Quantity = item.Quantity - 1;
+            item.Quantity--;
         }
         public override string ToString()
         {

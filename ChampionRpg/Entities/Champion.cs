@@ -38,6 +38,8 @@ namespace ChampionRpg.Entities
         {
             Inventory inventory = new Inventory();
 
+            item.Quantity = 50;
+
             Console.WriteLine($"Campeão {Name} escolha uma ação: Ataque/Item");
             choice = Console.ReadLine();
 
@@ -52,10 +54,11 @@ namespace ChampionRpg.Entities
             {
                 Console.WriteLine();
                 Console.WriteLine("Inventário");
-                inventory.MostrandoItens(item);
+                Console.WriteLine(item.Quantity.ToString());
+                //inventory.MostrandoItens(item);
                 Console.WriteLine();
                 item.ChoosingItem(item, championChoose);
-                inventory.RemoveItem(item);
+                item.RemovendoItem(item);
             }
 
             else
