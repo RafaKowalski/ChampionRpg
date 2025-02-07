@@ -9,9 +9,9 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Champion championOne = new Champion("Rafael");
+        Champion championOne = new("Rafael");
         Item itemOne = new Item();
-        Champion championTwo = new Champion("GustavinhoGamePlays");
+        Champion championTwo = new("GustavinhoGamePlays");
         Item itemTwo = new Item();
 
         try
@@ -19,32 +19,31 @@ public class Program
             Console.WriteLine($"{championOne.Name} escolha uma classe: human/orc/elf/dwarf");
             string classeOne = Console.ReadLine();
 
-            if (classeOne == "human")
+            switch (classeOne)
             {
-                Human human = new Human();
-                human.EscolhendoClasseHuman(championOne);
-            }
+                case "human":
+                    Human human = new Human();
+                    human.EscolhendoClasseHuman(championOne);
+                    break;
 
-            else if (classeOne == "orc")
-            {
-                Orc orc = new Orc();
-                orc.EscolhendoClasseOrc(championOne);
-            }
+                case "orc":
+                    Orc orc = new Orc();
+                    orc.EscolhendoClasseOrc(championOne);
+                    break;
 
-            else if (classeOne == "elf")
-            {
-                Elf elf = new Elf();
-                elf.EscolhendoClasseElf(championOne);
-            }
+                case "elf":
+                    Elf elf = new Elf();
+                    elf.EscolhendoClasseElf(championOne);
+                    break;
 
-            else if (classeOne == "dwarf")
-            {
-                Dwarf dwarf = new Dwarf();
-                dwarf.EscolhendoClasseDwarf(championOne);
-            }
+                case "dwarf":
+                    Dwarf dwarf = new Dwarf();
+                    dwarf.EscolhendoClasseDwarf(championOne);
+                    break;
 
-            else
-                throw new DomainException("Opção digitada incorretamente");
+                default:
+                    throw new DomainException("Opção digitada incorretamente");
+            }
         }
         catch (DomainException message)
         {
@@ -56,32 +55,31 @@ public class Program
             Console.WriteLine($"{championTwo.Name} escolha uma classe: human/orc/elf/dwarf");
             string classeTwo = Console.ReadLine();
 
-            if (classeTwo == "human")
+            switch (classeTwo)
             {
-                Human human = new Human();
-                human.EscolhendoClasseHuman(championTwo);
-            }
+                case "human":
+                    Human human = new Human();
+                    human.EscolhendoClasseHuman(championTwo);
+                    break;
 
-            else if (classeTwo == "orc")
-            {
-                Orc orc = new Orc();
-                orc.EscolhendoClasseOrc(championTwo);
-            }
+                case "orc":
+                    Orc orc = new Orc();
+                    orc.EscolhendoClasseOrc(championTwo);
+                    break;
 
-            else if (classeTwo == "elf")
-            {
-                Elf elf = new Elf();
-                elf.EscolhendoClasseElf(championTwo);
-            }
+                case "elf":
+                    Elf elf = new Elf();
+                    elf.EscolhendoClasseElf(championTwo);
+                    break;
 
-            else if (classeTwo == "dwarf")
-            {
-                Dwarf dwarf = new Dwarf();
-                dwarf.EscolhendoClasseDwarf(championTwo);
-            }
+                case "dwarf":
+                    Dwarf dwarf = new Dwarf();
+                    dwarf.EscolhendoClasseDwarf(championTwo);
+                    break;
 
-            else
-                throw new DomainException("Opção digitada incorretamente");
+                default:
+                    throw new DomainException("Opção digitada incorretamente");
+            }
         }
         catch (DomainException message)
         {
